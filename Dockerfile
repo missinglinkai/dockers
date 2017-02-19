@@ -51,9 +51,8 @@ RUN python -m pip install https://s3.amazonaws.com/pytorch/whl/cu75/torch-0.1.9.
 	python -m pip install torchvision && \
 	python -m pip install virtualenv
 
-RUN python3 -m pip install https://s3.amazonaws.com/pytorch/whl/cu75/torch-0.1.9.post2-cp36-cp36m-linux_x86_64.whl && \
-	python3 -m pip install torchvision && \
-	python3 -m pip install virtualenv
+RUN python3 -m pip install setuptools virtualenv
+RUN python -m pip install setuptools virtualenv
 
 RUN python -m pip install keras tensorflow
 RUN python3 -m pip install keras tensorflow
