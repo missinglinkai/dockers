@@ -36,9 +36,8 @@ WORKDIR $CAFFE_ROOT
 # FIXME: use ARG instead of ENV once DockerHub supports this
 ENV CLONE_TAG=rc4
 
-RUN git clone -b ${CLONE_TAG} --depth 1 https://github.com/BVLC/caffe.git .
-    
-RUN cd python && for req in $(cat requirements.txt) pydot; do pip install $req; done && 
+RUN git clone -b ${CLONE_TAG} --depth 1 https://github.com/BVLC/caffe.git . && \
+	cd python && for req in $(cat requirements.txt) pydot; do pip install $req; done
 
 RUN mkdir build && cd build && \
     cmake -DCPU_ONLY=1 .. && \
