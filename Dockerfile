@@ -1,6 +1,6 @@
 FROM missinglinkai/jenkins-k8s-slave:sdk
 
-RUN pip install missinglink-sdk
+RUN python -m pip install missinglink-sdk
 
 ADD keras_mnist.py keras_mnist.py
 
