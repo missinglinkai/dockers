@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python-pip \
         python-setuptools \
         python-scipy \
-        python3
+        python3 \
         python3-pip \
     rm -rf /var/lib/apt/lists/*
 
