@@ -42,9 +42,18 @@ ENV PYTHONPATH $PYCAFFE_ROOT:$PYTHONPATH
 ENV PATH $CAFFE_ROOT/build/tools:$PYCAFFE_ROOT:$PATH
 RUN echo "$CAFFE_ROOT/build/lib" >> /etc/ld.so.conf.d/caffe.conf && ldconfig
 
-RUN pip install https://s3.amazonaws.com/pytorch/whl/cu75/torch-0.1.8.post1-cp27-none-linux_x86_64.whl && \
-	pip install torchvision && \
-	pip install virtualenv
+RUN python -m pip install --upgrade pip
+RUN python3 -m pip install --upgrade pip
 
+RUN python -m pip install https://s3.amazonaws.com/pytorch/whl/cu75/torch-0.1.9.post2-cp27-none-linux_x86_64.whl && \
+	python -m pip install torchvision && \
+	python -m pip install virtualenv
+
+RUN python3 -m pip install https://s3.amazonaws.com/pytorch/whl/cu75/torch-0.1.9.post2-cp36-cp36m-linux_x86_64.whl && \
+	python3 -m pip install torchvision && \
+	python3 -m pip install virtualenv
+
+RUN python -m pip install keras tensorflow
+RUN python3 -m pip install keras tensorflow
 
 WORKDIR /workspace
