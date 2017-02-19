@@ -22,8 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python-setuptools \
         python-scipy \
         python3 \
-        python3-pip \
-    rm -rf /var/lib/apt/lists/*
+        python3-pip
 
 ENV CAFFE_ROOT=/opt/caffe
 WORKDIR $CAFFE_ROOT
