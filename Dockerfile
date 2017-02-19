@@ -1,4 +1,4 @@
-FROM missinglinkai/jenkins-k8s-slave:sdk
+FROM missinglinkai/frameworks:latest
 
 RUN python -m pip install missinglink-sdk
 
