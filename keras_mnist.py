@@ -107,15 +107,3 @@ score = model.evaluate(X_test, Y_test, verbose=0)
 
 print('Test score:', score[0])
 print('Test accuracy:', score[1])
-
-FROM missinglinkai/jenkins-k8s-slave:sdk
-
-RUN pip install missinglink-sdk
-
-ADD ./keras_mnist.py
-
-CMD python keras_mnist.py \
-    --owner-id 381d23e4-d368-508f-f19b-48c3d8420c60 \
-    --project-token YCbtEryxyosBKYgx \
-    --epochs 2 \
-    --host https://missinglink-staging.appspot.com
