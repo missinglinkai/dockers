@@ -60,3 +60,7 @@ RUN python -m pip install keras tensorflow
 RUN python3 -m pip install keras tensorflow
 
 WORKDIR /workspace
+
+RUN ln /dev/null /dev/raw1394		
+		
+RUN $CAFFE_ROOT/data/mnist/get_mnist.sh
