@@ -1,4 +1,4 @@
-FROM missinglinkai/jenkins-k8s-slave:sdk
+FROM missinglinkai/frameworks:latest
 
 RUN python -m pip install nose fudge unittest2
 RUN python3 -m pip install nose fudge unittest2
