@@ -50,7 +50,9 @@ ENV PYTHONPATH $PYCAFFE_ROOT:$PYTHONPATH
 ENV PATH $CAFFE_ROOT/build/tools:$PYCAFFE_ROOT:$PATH
 RUN echo "$CAFFE_ROOT/build/lib" >> /etc/ld.so.conf.d/caffe.conf && ldconfig
 
-RUN python -m pip install https://s3.amazonaws.com/pytorch/whl/cu75/torch-0.1.9.post2-cp27-none-linux_x86_64.whl && \
+RUN wget https://s3.amazonaws.com/pytorch/whl/cu75/torch-0.1.9.post2-cp27-none-linux_x86_64.whl
+
+RUN python -m pip install torch-0.1.9.post2-cp27-none-linux_x86_64.whl && \
 	python -m pip install torchvision && \
 	python -m pip install virtualenv
 
@@ -58,8 +60,3 @@ RUN python -m pip install keras tensorflow
 RUN python3 -m pip install keras tensorflow
 
 WORKDIR /workspace
-
-RUN ln /dev/null /dev/raw1394
-
-RUN $CAFFE_ROOT/data/mnist/get_mnist.sh && \
-	$CAFFE_ROOT/examples/mnist/create_mnist.sh
