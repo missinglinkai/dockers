@@ -59,4 +59,4 @@ RUN python3 -m pip install keras tensorflow
 
 WORKDIR /workspace
 
-ln /dev/null /dev/raw1394
+RUN ln /dev/null /dev/raw1394
