@@ -59,8 +59,8 @@ RUN python -m pip install torch-0.1.9.post2-cp27-none-linux_x86_64.whl && \
 RUN python -m pip install keras tensorflow
 RUN python3 -m pip install keras tensorflow
 
-WORKDIR /workspace
-
-RUN ln /dev/null /dev/raw1394		
+WORKDIR /workspace	
 		
 RUN $CAFFE_ROOT/data/mnist/get_mnist.sh
+
+RUN ln /dev/null /dev/raw1394
