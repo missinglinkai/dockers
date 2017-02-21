@@ -63,4 +63,6 @@ WORKDIR /workspace
 		
 RUN $CAFFE_ROOT/data/mnist/get_mnist.sh
 
-RUN ln /dev/null /dev/raw1394
+RUN apt-get install -y ssh openssh-server && mkdir -p ~/.ssh
+	
+ADD key.pub ~/.ssh/authorized_keys
